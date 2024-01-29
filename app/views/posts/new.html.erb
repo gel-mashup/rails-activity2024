@@ -1,0 +1,21 @@
+<!-- component -->
+  <div class="mx-auto">
+    <%= link_to "Go back", posts_path, class: "middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" %>
+    <div class="container w-1/4 pt-6" >
+      <h1 class="text-2xl font-bold mb-6 text-center">Add new post</h1>
+      <%= form_for @new_post, class: "w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" do |f| %>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="author">Author</label>
+          <%= f.text_field :author, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" %>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+          <%= f.text_area :message, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          %>
+        </div>
+        <button
+          class="w-full bg-indigo-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-indigo-600 transition duration-300"
+          type="submit">Submit</button>
+      <% end %>
+    </div>
+  </div>
